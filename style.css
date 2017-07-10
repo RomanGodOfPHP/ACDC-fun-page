@@ -65,15 +65,34 @@ font-weight: bold;
 .content p {
 margin:12px; 
 padding:5px; 
-font:13px Arial, Helvetica, sans-serif; 
+font:14px Arial, Helvetica, sans-serif; 
 text-indent: 20px;
 }
 .footer{
-position: fixed; /* Фиксированное положение */
+position: static; /* Фиксированное положение */
 left: 0; bottom: 0; /* Левый нижний угол */
-padding: 10px; /* Поля вокруг текста */
+padding: 5px; /* Поля вокруг текста */
 background: #000; /* Цвет фона */
 color: #fff; /* Цвет текста */
 width: 100%; /* Ширина слоя */
 height: 80px;
+font:13px Arial, Helvetica, sans-serif; 
 }
+.footer-menu{
+width: 1000px; 
+margin: auto;
+}
+#text-equals{
+display: block; 
+float: left; 
+text-indent: 5px; 
+color: #fff;
+text-decoration:none;
+}
+#img-equals{
+display: block;
+float: left;
+}
+td {font: 20px Arial, Helvetica, sans-serif;}
+h2 {color: #FF4500; text-align: center;}
+table {margin-left: 30px;}
