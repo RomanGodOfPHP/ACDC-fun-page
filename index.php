@@ -1,10 +1,19 @@
+п»ї<?php
+$db=mysql_connect("localhost", "admin_ACDC", "12345");
+mysql_select_db("ACDC_site", $db);
+if (!$db) {
+	exit(mysql_error());
+}
+/* $result=mysql_query("SELECT title, meta_d, meta_k, text FROM settings WHERE page='index'", $db);
+$myrow=mysql_fetch_array($result); */
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
-<title>AC/DC фан-страница</title>
-<meta name="discription" content="фан-страница группы AC/DC">
-<meta name="keywords" content="AC/DC, band, group, concerts, studio, audio, music, музыка, группа, концерты">
+<title>AC/DC С„Р°РЅ-СЃС‚СЂР°РЅРёС†Р°</title>
+<meta name="discription" content="С„Р°РЅ-СЃС‚СЂР°РЅРёС†Р° РіСЂСѓРїРїС‹ AC/DC">
+<meta name="keywords" content="AC/DC, band, group, concerts, studio, audio, music, РјСѓР·С‹РєР°, РіСЂСѓРїРїР°, РєРѕРЅС†РµСЂС‚С‹">
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -12,64 +21,134 @@
 	<header class="header"><img src="img/ac-dc-logo.png">
 		<div id="mainmenu">
 			<ul>
-				<li><a href="#Bund" style="border-radius: 8px 8px 0px 0px;" class="radius">Группа</a></li>
-				<li><a href="#concerts" style="border-radius: 8px 8px 0px 0px;" class="radius">Концертный тур</a></li>
-				<li><a href="#gallery" style="border-radius: 8px 8px 0px 0px;" class="radius">Галлерея</a></li>
-				<li><a href="#cotacts" style="border-radius: 8px 8px 0px 0px;" class="radius">Контакты</a></li>
+				<li><a href="#Bund" style="border-radius: 8px 8px 0px 0px;" class="radius">Р“СЂСѓРїРїР°</a></li>
+				<li><a href="#concerts" style="border-radius: 8px 8px 0px 0px;" class="radius">РљРѕРЅС†РµСЂС‚РЅС‹Р№ С‚СѓСЂ</a></li>
+				<li><a href="#gallery" style="border-radius: 8px 8px 0px 0px;" class="radius">Р“Р°Р»РµСЂРµСЏ</a></li>
+				<li><a href="#cotacts" style="border-radius: 8px 8px 0px 0px;" class="radius">РљРѕРЅС‚Р°РєС‚С‹</a></li>
 			</ul>
 		</div>
 	</header>
 	<div class="content">
-		<H1>AC/DC - великая группа, ставшая известной во всём мире!</H1>
-		<p>AC/DC (сокр. от англ. alternating current/direct current — переменный/постоянный ток)[1] — 
-		австралийская рок-группа, сформированная в Сиднее в ноябре 1973 года выходцами из Шотландии, братьями Малькольмом 
-		и Ангусом Янгами.</p>
-		<p>Вместе с такими группами как Led Zeppelin, Deep Purple, Queen, Iron Maiden, Scorpions, Black Sabbath, Uriah Heep, 
-		Judas Priest и Motorhead AC/DC часто рассматриваются как пионеры хард-рока и хеви-метала.[2][3] Сами же музыканты 
-		классифицировали свою музыку как рок-н-ролл[4], поскольку в её основе лежит ритм-н-блюз с сильно искажённым звучанием 
-		ритмической и соло-гитар.</p>
-		<p>Коллектив прошёл через несколько изменений составов, прежде чем в 1975 году был издан первый альбом группы, 
-		High Voltage. Состав группы оставался неизменным, пока бас-гитарист Марк Эванс[en] (англ. Mark Evans) не был замещён 
-		Клиффом Уильямсом (англ. Cliff Williams) в 1977 году. 19 февраля 1980 года от сильного алкогольного опьянения 
-		умер вокалист и автор песен коллектива Бон Скотт. Группа имела все шансы распасться, однако замена Скотту 
-		была найдена в лице бывшего вокалиста группы Geordie Брайана Джонсона. В этом же году группа записала свой 
-		самый продаваемый альбом, Back in Black.</p>
-		<p>Коллектив продал свыше 200 миллионов копий альбомов по всему миру[5][6], включая 72 миллиона в США[7]. 
-		Самый успешный альбом, Back in Black, был продан в количестве более 22 миллионов в США[8] и более 42 миллионов 
-		за их пределами[9]. В целом AC/DC является самой успешной и известной рок-группой из Австралии и одной из 
-		популярнейших в мире.</p></br>
+		<H1>AC/DC - РІРµР»РёРєР°СЏ РіСЂСѓРїРїР°, СЃС‚Р°РІС€Р°СЏ РёР·РІРµСЃС‚РЅРѕР№ РІРѕ РІСЃС‘Рј РјРёСЂРµ!</H1>
+		<p>AC/DC (СЃРѕРєСЂ. РѕС‚ Р°РЅРіР». alternating current/direct current вЂ” РїРµСЂРµРјРµРЅРЅС‹Р№/РїРѕСЃС‚РѕСЏРЅРЅС‹Р№ С‚РѕРє) вЂ” 
+		Р°РІСЃС‚СЂР°Р»РёР№СЃРєР°СЏ СЂРѕРє-РіСЂСѓРїРїР°, СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅР°СЏ РІ РЎРёРґРЅРµРµ РІ РЅРѕСЏР±СЂРµ 1973 РіРѕРґР° РІС‹С…РѕРґС†Р°РјРё РёР· РЁРѕС‚Р»Р°РЅРґРёРё, Р±СЂР°С‚СЊСЏРјРё РњР°Р»СЊРєРѕР»СЊРјРѕРј 
+		Рё РђРЅРіСѓСЃРѕРј РЇРЅРіР°РјРё.</p>
+		<p>Р’РјРµСЃС‚Рµ СЃ С‚Р°РєРёРјРё РіСЂСѓРїРїР°РјРё РєР°Рє Led Zeppelin, Deep Purple, Queen, Iron Maiden, Scorpions, Black Sabbath, Uriah Heep, 
+		Judas Priest Рё Motorhead AC/DC С‡Р°СЃС‚Рѕ СЂР°СЃСЃРјР°С‚СЂРёРІР°СЋС‚СЃСЏ РєР°Рє РїРёРѕРЅРµСЂС‹ С…Р°СЂРґ-СЂРѕРєР° Рё С…РµРІРё-РјРµС‚Р°Р»Р°. РЎР°РјРё Р¶Рµ РјСѓР·С‹РєР°РЅС‚С‹ 
+		РєР»Р°СЃСЃРёС„РёС†РёСЂРѕРІР°Р»Рё СЃРІРѕСЋ РјСѓР·С‹РєСѓ РєР°Рє СЂРѕРє-РЅ-СЂРѕР»Р», РїРѕСЃРєРѕР»СЊРєСѓ РІ РµС‘ РѕСЃРЅРѕРІРµ Р»РµР¶РёС‚ СЂРёС‚Рј-РЅ-Р±Р»СЋР· СЃ СЃРёР»СЊРЅРѕ РёСЃРєР°Р¶С‘РЅРЅС‹Рј Р·РІСѓС‡Р°РЅРёРµРј 
+		СЂРёС‚РјРёС‡РµСЃРєРѕР№ Рё СЃРѕР»Рѕ-РіРёС‚Р°СЂ.</p>
+		<p>РљРѕР»Р»РµРєС‚РёРІ РїСЂРѕС€С‘Р» С‡РµСЂРµР· РЅРµСЃРєРѕР»СЊРєРѕ РёР·РјРµРЅРµРЅРёР№ СЃРѕСЃС‚Р°РІРѕРІ, РїСЂРµР¶РґРµ С‡РµРј РІ 1975 РіРѕРґСѓ Р±С‹Р» РёР·РґР°РЅ РїРµСЂРІС‹Р№ Р°Р»СЊР±РѕРј РіСЂСѓРїРїС‹, 
+		High Voltage. РЎРѕСЃС‚Р°РІ РіСЂСѓРїРїС‹ РѕСЃС‚Р°РІР°Р»СЃСЏ РЅРµРёР·РјРµРЅРЅС‹Рј, РїРѕРєР° Р±Р°СЃ-РіРёС‚Р°СЂРёСЃС‚ РњР°СЂРє Р­РІР°РЅСЃ[en] (Р°РЅРіР». Mark Evans) РЅРµ Р±С‹Р» Р·Р°РјРµС‰С‘РЅ 
+		РљР»РёС„С„РѕРј РЈРёР»СЊСЏРјСЃРѕРј (Р°РЅРіР». Cliff Williams) РІ 1977 РіРѕРґСѓ. 19 С„РµРІСЂР°Р»СЏ 1980 РіРѕРґР° РѕС‚ СЃРёР»СЊРЅРѕРіРѕ Р°Р»РєРѕРіРѕР»СЊРЅРѕРіРѕ РѕРїСЊСЏРЅРµРЅРёСЏ 
+		СѓРјРµСЂ РІРѕРєР°Р»РёСЃС‚ Рё Р°РІС‚РѕСЂ РїРµСЃРµРЅ РєРѕР»Р»РµРєС‚РёРІР° Р‘РѕРЅ РЎРєРѕС‚С‚. Р“СЂСѓРїРїР° РёРјРµР»Р° РІСЃРµ С€Р°РЅСЃС‹ СЂР°СЃРїР°СЃС‚СЊСЃСЏ, РѕРґРЅР°РєРѕ Р·Р°РјРµРЅР° РЎРєРѕС‚С‚Сѓ 
+		Р±С‹Р»Р° РЅР°Р№РґРµРЅР° РІ Р»РёС†Рµ Р±С‹РІС€РµРіРѕ РІРѕРєР°Р»РёСЃС‚Р° РіСЂСѓРїРїС‹ Geordie Р‘СЂР°Р№Р°РЅР° Р”Р¶РѕРЅСЃРѕРЅР°. Р’ СЌС‚РѕРј Р¶Рµ РіРѕРґСѓ РіСЂСѓРїРїР° Р·Р°РїРёСЃР°Р»Р° СЃРІРѕР№ 
+		СЃР°РјС‹Р№ РїСЂРѕРґР°РІР°РµРјС‹Р№ Р°Р»СЊР±РѕРј, Back in Black.</p>
+		<p>РљРѕР»Р»РµРєС‚РёРІ РїСЂРѕРґР°Р» СЃРІС‹С€Рµ 200 РјРёР»Р»РёРѕРЅРѕРІ РєРѕРїРёР№ Р°Р»СЊР±РѕРјРѕРІ РїРѕ РІСЃРµРјСѓ РјРёСЂСѓ, РІРєР»СЋС‡Р°СЏ 72 РјРёР»Р»РёРѕРЅР° РІ РЎРЁРђ. 
+		РЎР°РјС‹Р№ СѓСЃРїРµС€РЅС‹Р№ Р°Р»СЊР±РѕРј, Back in Black, Р±С‹Р» РїСЂРѕРґР°РЅ РІ РєРѕР»РёС‡РµСЃС‚РІРµ Р±РѕР»РµРµ 22 РјРёР»Р»РёРѕРЅРѕРІ РІ РЎРЁРђ Рё Р±РѕР»РµРµ 42 РјРёР»Р»РёРѕРЅРѕРІ 
+		Р·Р° РёС… РїСЂРµРґРµР»Р°РјРё. Р’ С†РµР»РѕРј AC/DC СЏРІР»СЏРµС‚СЃСЏ СЃР°РјРѕР№ СѓСЃРїРµС€РЅРѕР№ Рё РёР·РІРµСЃС‚РЅРѕР№ СЂРѕРє-РіСЂСѓРїРїРѕР№ РёР· РђРІСЃС‚СЂР°Р»РёРё Рё РѕРґРЅРѕР№ РёР· 
+		РїРѕРїСѓР»СЏСЂРЅРµР№С€РёС… РІ РјРёСЂРµ.</p>
+	</div>
+	<div class="Sostav">
+		<div class="Sostav-content">
 		<a name="Bund">
-		<H2>Звёздный состав</h2>
+		<H2>Р—РІС‘Р·РґРЅС‹Р№ СЃРѕСЃС‚Р°РІ</H2>
 		<table>
 			<tr>
-				<td><img src="img/ico_electro.png" title="Электро гитара" width="30"></td>
-				<td>Ангус Янг</td>
+				<td><img src="img/ico_electro.png" title="Р­Р»РµРєС‚СЂРѕ РіРёС‚Р°СЂР°" width="30"></td>
+				<td>РђРЅРіСѓСЃ РЇРЅРі</td>
 			</tr>
 			<tr>
-				<td><img src="img/ico_acoustic.jpg" title="Ритм гитара" width="30"></td>
-				<td>Мальком Янг</td>
+				<td><img src="img/ico_acoustic.jpg" title="Р РёС‚Рј РіРёС‚Р°СЂР°" width="30"></td>
+				<td>РњР°Р»СЊРєРѕРј РЇРЅРі</td>
 			</tr>
 			<tr>
-				<td><img src="img/ico_vocal.jpg" title="Вокал" width="30"></td>
-				<td>Брайн Джонсон</td>
+				<td><img src="img/ico_vocal.jpg" title="Р’РѕРєР°Р»" width="30"></td>
+				<td>Р‘СЂР°Р№РЅ Р”Р¶РѕРЅСЃРѕРЅ</td>
 			</tr>
 			<tr>
-				<td><img src="img/ico_bus.jpeg" title="Басс гитара" width="30"></td>
-				<td class="td-taxt">Клифф Уильямс</td>
+				<td><img src="img/ico_bus.jpeg" title="Р‘Р°СЃСЃ РіРёС‚Р°СЂР°" width="30"></td>
+				<td class="td-taxt">РљР»РёС„С„ РЈРёР»СЊСЏРјСЃ</td>
 			</tr>
 			<tr>
-				<td><img src="img/ico_drum.png" title="Барабаны" width="30"></td>
-				<td>Фил Радд</td>
+				<td><img src="img/ico_drum.png" title="Р‘Р°СЂР°Р±Р°РЅС‹" width="30"></td>
+				<td>Р¤РёР» Р Р°РґРґ</td>
 			</tr>
 		</table>
-		<H4>Изменения в составе:</h4>
-		<img src="img/sostav.png" width="900"></br>
+		<H4>РР·РјРµРЅРµРЅРёСЏ РІ СЃРѕСЃС‚Р°РІРµ:</h4>
+		<figure id="img-center"><img src="img/sostav.png" width="900" align="center" border="1"></br>
+		</div>
+	</div>
+	<div class="concerts">
+		<a name="concerts">
+		<H2>РЎРїРёСЃРѕРє Р±Р»РёР¶Р°Р№С€РёС… РєРѕРЅС†РµСЂС‚РѕРІ</H2>
+			<div class="concerts-content"><?php include("cycle_concerts.php"); ?></div>
+	</div>
+	<div class="gallery">
+		<a name="gallery">
+		<H2>Р“Р°Р»РµСЂРµСЏ</H2>
+			<div class="gallery-content">
+				<p class="gallery-p">Р’СЃРµ С„РѕС‚РѕРіСЂР°С„РёРё</p>
+				<table class="gallery-table">
+					<tr>
+						<td><img src="img/gallery/all-1.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-2.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-3.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-4.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-5.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-6.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-6.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-6.jpg" class="all-photo"></td>
+					</tr>
+				</table>
+				<p class="gallery-p">Р¤РѕС‚РѕРіСЂР°С„РёРё СЃ С‚СѓСЂРѕРІ</p>
+				<table class="gallery-table">
+					<tr>
+						<td><img src="img/gallery/all-1.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-2.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-3.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-4.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-5.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-6.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-6.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-6.jpg" class="all-photo"></td>
+					</tr>
+				</table>
+				<p class="gallery-p">Р¤РѕС‚РѕРіСЂР°С„РёРё СЂР°Р·РЅС‹С… Р»РµС‚</p>
+				<table class="gallery-table">
+					<tr>
+						<td><img src="img/gallery/all-1.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-2.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-3.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-4.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-5.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-6.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-6.jpg" class="all-photo"></td>
+						<td><img src="img/gallery/all-6.jpg" class="all-photo"></td>
+					</tr>
+				</table>
+			</div>
 	</div>
 	<footer class="footer">
 		<div class="footer-menu">
-			<p >© 2017 Сайт разрабтан новоиспечённым программситом, Ведерниковым Романом</p>
-			<a href="https://vk.com/cuclovod56" target="_blank"><img src="img/vk.png" id="img-equals" width="15" height="15"></a>
-			<a href="https://vk.com/cuclovod56" target="_blank" id="text-equals"> Контакт</a>
+			<p >В© 2017 РЎР°Р№С‚ СЂР°Р·СЂР°Р±С‚Р°РЅ РЅРѕРІРѕРёСЃРїРµС‡С‘РЅРЅС‹Рј РїСЂРѕРіСЂР°РјРјСЃРёС‚РѕРј, Р’РµРґРµСЂРЅРёРєРѕРІС‹Рј Р РѕРјР°РЅРѕРј</p>
+			<table>
+				<tr>
+					<td>
+					<a href="https://vk.com/cuclovod56" target="_blank"><img src="img/vk.png" id="img-equals" width="15" height="15"></a>
+					</td>
+					<td>
+					<a href="https://vk.com/cuclovod56" target="_blank" id="text-equals">РљРѕРЅС‚Р°РєС‚</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<a href="http://www.acdc.com" target="_blank"><img src="img/Ikonka-AC-DC.jpg" id="img-equals" width="15" height="15"></a>
+					</td>
+					<td>
+					<a href="http://www.acdc.com" target="_blank" id="text-equals">РћРёС†РёР°Р»СЊРЅС‹Р№ СЃР°Р№С‚ AC/DC</a>
+					</td>
+				</tr>
+			</table>
 		</div>
 	</footer>
 </div>
